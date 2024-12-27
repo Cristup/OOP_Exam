@@ -42,6 +42,7 @@ int main()
             std::ifstream file("data\\" + filename);
             if (!file.is_open()) {
                 std::cerr << "File not found!\n";
+                file.close();
                 continue;
             }
         }

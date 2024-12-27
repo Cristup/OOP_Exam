@@ -22,7 +22,14 @@ using std::ofstream;
 using std::cout;
 using std::cin;
 using std::endl;
+using std::stringstream;
 
 using std::transform;
+using std::getline;
+using std::ispunct;
+using std::smatch;
+using std::regex_search;
+using std::regex_match;
+using std::regex;
 
 #endif
