@@ -45,6 +45,10 @@ int main()
                 file.close();
                 continue;
             }
+
+            read(filename, word_count, word_locations, urls);
+            printData(filename, word_count, word_locations);
+
         }
     }
 }

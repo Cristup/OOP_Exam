@@ -4,6 +4,13 @@
 #include "libs.h"
 #include "util.h"
 
-void read(const string& filename, map<string, int>& word_count, map<string, set<int>>& word_location, set<string>& urls);
+void read(const string& filename,
+	map<string, int>& word_count,
+	map<string, set<int>>& word_location,
+	set<string>& urls);
+
+void printData(const string& filename,
+	const map<string, int>& word_count,
+	const map<string, set<int>>& word_location);
 
 #endif

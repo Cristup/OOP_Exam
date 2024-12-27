@@ -34,3 +34,12 @@ void read(const string& filename, map<string, int>& word_count, map<string, set<
 
 	}
 }
+
+void printData(const string& filename, const map<string, int>& word_count, const map<string, set<int>>& word_location)
+{
+	for (const auto& rec : word_count) {
+		if (rec.second > 1) {
+			cout << rec.first << ": " << rec.second << endl;
+		}
+	}
+}
