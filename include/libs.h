@@ -10,6 +10,7 @@
 #include <iomanip>
 #include <algorithm>
 #include <vector>
+#include <direct.h>
 
 using std::map;
 using std::string;
@@ -20,6 +21,7 @@ using std::ifstream;
 using std::ofstream;
 using std::cout;
 using std::cin;
+using std::endl;
 
 using std::transform;
 
