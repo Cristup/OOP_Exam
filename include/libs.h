@@ -31,5 +31,6 @@ using std::smatch;
 using std::regex_search;
 using std::regex_match;
 using std::regex;
+using std::setw;
 
 #endif
