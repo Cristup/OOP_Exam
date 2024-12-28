@@ -48,14 +48,7 @@ int main()
 
             read(filename, word_count, word_locations, urls);
             printData(filename, word_count, word_locations);
-            
-            //########
-            if (urls.empty()) { cout << "empty"; }
-
-            for (const auto& url : urls) {
-                cout << url << endl;
-            }
-            //########
+            printUrls(urls);
 
         }
     }

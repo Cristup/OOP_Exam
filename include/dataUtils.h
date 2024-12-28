@@ -13,4 +13,6 @@ void printData(const string& filename,
 	const map<string, int>& word_count,
 	const map<string, set<int>>& word_location);
 
+void printUrls(const set<string>& urls);
+
 #endif
