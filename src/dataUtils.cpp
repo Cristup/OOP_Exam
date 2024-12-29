@@ -47,11 +47,11 @@ void printData(const string& filename, const map<string, int>& word_count, const
 	name += "_result.txt";
 	ofstream file_output("results\\" + name);
 
-	file_output << "      word      |count|          locations\n";
-	file_output << "----------------+-----+----------------------------------\n";
+	file_output << "        word        |count |          locations\n";
+	file_output << "--------------------+------+-------------------------------\n";
 	for (const auto& rec : word_count) {
 		if (rec.second > 1) {
-			file_output << setw(16) << left << rec.first << "| " << setw(5) << left << rec.second << "|   ";
+			file_output << setw(20) << left << rec.first << "| " << setw(5) << left << rec.second << "|  ";
 			for (const auto& a : word_location.at(rec.first)) {
 				file_output << a << " ";
 			}

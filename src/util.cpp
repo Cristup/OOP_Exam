@@ -4,8 +4,8 @@ string clean(const string& word)
 {
 	string cleanWord;
 	for (char c : word) {
-		if (!ispunct(c)) {
-			cleanWord += c;
+		if (!ispunct(c) && !isdigit(c)) {
+			cleanWord += tolower(c);
 		}
 	}
 	return cleanWord;

@@ -35,20 +35,37 @@ int main()
 
         //===FILE===
         if (user_selection.substr(0, 3) == "fil") {
+            cout << "\nAvailable '.txt' files:\n=======================\n";
             system(command.c_str());
-            cout << "\033[" << 33 << "m" << "Filename << " << "\033[" << 97 << "m";
-            cin >> filename;
+            cout << "=======================\n\n";
 
-            std::ifstream file("data\\" + filename);
-            if (!file.is_open()) {
-                std::cerr << "File not found!\n";
-                file.close();
-                continue;
+            while (true) {
+                cout << "\033[" << 33 << "m" << "Filename << " << "\033[" << 97 << "m";
+                cin >> filename;
+
+                if (filename.length() <= 4 || filename.substr(filename.length() - 4, 4) != ".txt") {
+                    filename += ".txt";
+                }
+
+                std::ifstream file("data\\" + filename);
+                if (!file.is_open()) {
+                    std::cerr << "File with name: '" << filename << "' not found!\n";
+                    file.close();
+                    continue;
+                }
+                break;
             }
+
+            string fn = filename.substr(0, filename.length() - 4) + "_result.txt";
+            cout << "\nResults of '" << filename << "' are in results folder.\nResult file name is: '" << fn << "'.\n\n";
 
             read(filename, word_count, word_locations, urls);
             printData(filename, word_count, word_locations);
             printUrls(urls);
+
+            word_count.clear();
+            word_locations.clear();
+            urls.clear();
 
         }
     }
