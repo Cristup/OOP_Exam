@@ -5,4 +5,6 @@
 
 string clean(const string& word);
 
+bool valid(string url);
+
 #endif

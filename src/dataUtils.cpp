@@ -5,7 +5,7 @@ void read(const string& filename, map<string, int>& word_count, map<string, set<
 	string word;
 	string line_input;
 	stringstream buf;
-	regex urlPattern(R"((https?://[^\s]+|www\.[^\s]+|[a-zA-Z0-9-]+\.[a-zA-Z]{2,})(/[^\s]*)?)");
+	regex urlPattern(R"(((https?://www\.)|(www\.))?[a-zA-Z0-9-]+\.(com|org|net|int|edu|info|gov|localhost|local|onion|test|crypto|example|invalid|info|biz|mil|name|pro|aero|asia|cat|coop|museum|post|tel|travel|arpa|mobi|jobs|cloud|app|tech|store|online|site|wiki|design|art|love|world|today|news|life|media|social|network|email|club|digital|solutions|tools|games|business|company|finance|health|agency|events|ventures|partners|foundation|support|marketing|education|software|photography|[a-zA-Z]{2})(/[^\s]*)?[.,;]?)");
 
 	ifstream file("data\\" + filename);
 	buf << file.rdbuf();
@@ -20,7 +20,7 @@ void read(const string& filename, map<string, int>& word_count, map<string, set<
 		string::const_iterator searchStart(line_input.cbegin());
 		while (regex_search(searchStart, line_input.cend(), match, urlPattern)) {
 			url = match.str();
-			if (url.back() == ',') { url.pop_back(); }
+			if (url.back() == ',' || url.back() == '.' || url.back() == ';' || url.back() == '!' || url.back() == '?') { url.pop_back(); }
 			urls.insert(url);
 			searchStart = match.suffix().first;
 		}
